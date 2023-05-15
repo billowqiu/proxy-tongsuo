@@ -8,9 +8,11 @@ load(
     "envoy_cc_extension",
     "envoy_cc_library",
     "envoy_package",
+    "envoy_extension_package",
 )
 
-envoy_package()
+# envoy_package()
+envoy_extension_package()
 
 envoy_cc_library(
     name = "aws_request_signing_filter_lib",
@@ -29,6 +31,7 @@ envoy_cc_library(
 envoy_cc_extension(
     name = "config",
     repository = "@envoy",
+    category = ("envoy.filters.http"),
     srcs = ["config.cc"],
     hdrs = ["config.h"],
     security_posture = "requires_trusted_downstream_and_upstream",

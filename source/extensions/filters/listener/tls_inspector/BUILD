@@ -8,9 +8,11 @@ load(
     "envoy_cc_extension",
     "envoy_cc_library",
     "envoy_package",
+    "envoy_extension_package",
 )
 
-envoy_package()
+# envoy_package()
+envoy_extension_package()
 
 envoy_cc_library(
     name = "tls_inspector_lib",
@@ -38,6 +40,9 @@ envoy_cc_extension(
     name = "config",
     repository = "@envoy",
     srcs = ["config.cc"],
+    category = (    
+        "envoy.transport_sockets.downstream",
+        "envoy.transport_sockets.upstream"), 
     security_posture = "robust_to_untrusted_downstream",
     deps = [
         "@envoy//include/envoy/registry",

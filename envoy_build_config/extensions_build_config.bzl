@@ -269,3 +269,6 @@ WINDOWS_EXTENSIONS = {
 
     #"envoy.transport_sockets.tap":                      "@envoy//source/extensions/transport_sockets/tap:config",
 }
+
+EXTENSION_CONFIG_VISIBILITY = ["//visibility:public"]
+EXTENSION_PACKAGE_VISIBILITY = ["//visibility:public"]

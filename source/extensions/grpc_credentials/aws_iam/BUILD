@@ -6,12 +6,15 @@ load(
     "@envoy//bazel:envoy_build_system.bzl",
     "envoy_cc_extension",
     "envoy_package",
+    "envoy_extension_package",
 )
 
-envoy_package()
+# envoy_package()
+envoy_extension_package()
 
 envoy_cc_extension(
     name = "config",
+    category = ("envoy.grpc_credentials"),
     repository = "@envoy",
     srcs = ["config.cc"],
     hdrs = ["config.h"],
