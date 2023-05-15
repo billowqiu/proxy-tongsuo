@@ -1,6 +1,7 @@
 licenses(["notice"])  # Apache 2
 
 openssl_headers = [
+    "install/include/openssl/ntls.h",
     "install/include/openssl/pkcs7.h",
     "install/include/openssl/cterr.h",
     "install/include/openssl/tls1.h",
@@ -122,12 +123,12 @@ genrule(
     name = "build",
     srcs = glob(["**"]),
     outs = [
-        "install/lib/libssl.so.1.1",
-        "install/lib/libcrypto.so",
-        "install/lib/engines-1.1/afalg.so",
-        "install/lib/engines-1.1/padlock.so",
-        "install/lib/engines-1.1/capi.so",
-        "install/lib/libssl.so",
+#"install/lib/libssl.so.1.1",
+#"install/lib/libcrypto.so",
+#"install/lib/engines-1.1/afalg.so",
+#"install/lib/engines-1.1/padlock.so",
+#"install/lib/engines-1.1/capi.so",
+#"install/lib/libssl.so",
         "install/lib/pkgconfig/openssl.pc",
         "install/lib/pkgconfig/libcrypto.pc",
         "install/lib/pkgconfig/libssl.pc",

@@ -5,15 +5,15 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 http_archive(
     name = "openssl",
     build_file = "@//:openssl.BUILD",
-    sha256 = "281e4f13142b53657bd154481e18195b2d477572fdffa8ed1065f73ef5a19777",
-    strip_prefix = "openssl-OpenSSL_1_1_1g",
-    urls = ["https://github.com/openssl/openssl/archive/OpenSSL_1_1_1g.tar.gz"],
+    sha256 = "1dceea88b2ff8fde11949b7976395c7821ef038643926293da7e4dabecc830b8",
+    strip_prefix = "Tongsuo-8.3.0",
+    urls = ["https://github.com/Tongsuo-Project/Tongsuo/archive/refs/tags/8.3.0.tar.gz"],
 )
 
 new_local_repository(
     name = "openssl_shared",
     build_file = "openssl_host_shared.BUILD",
-    path = "/opt/babassl",
+    path = "/opt/tongsuo-8.3.0",
 )
 
 local_repository(
